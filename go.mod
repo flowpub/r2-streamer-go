@@ -1,4 +1,4 @@
-module github.com/readium/r2-streamer-go
+module github.com/flowpub/r2-streamer-go
 
 go 1.13
 

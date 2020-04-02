@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/readium/r2-streamer-go/models"
-	"github.com/readium/r2-streamer-go/parser/comicrack"
+	"github.com/flowpub/r2-streamer-go/models"
+	"github.com/flowpub/r2-streamer-go/parser/comicrack"
 )
 
 func init() {

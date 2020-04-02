@@ -5,7 +5,7 @@ import (
 	"crypto/sha256"
 	"fmt"
 
-	"github.com/readium/r2-streamer-go/models"
+	"github.com/flowpub/r2-streamer-go/models"
 )
 
 // HasGoodKey check if the Publication contains hashed pass phrase or pass

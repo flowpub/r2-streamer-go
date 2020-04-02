@@ -4,7 +4,7 @@ import (
 	"errors"
 	"io"
 
-	"github.com/readium/r2-streamer-go/models"
+	"github.com/flowpub/r2-streamer-go/models"
 )
 
 // missingOrBadKey error return when the key is missing or not correct

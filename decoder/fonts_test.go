@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/readium/r2-streamer-go/models"
+	"github.com/flowpub/r2-streamer-go/models"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
