@@ -12,9 +12,9 @@ import (
 	"time"
 
 	"github.com/PuerkitoBio/goquery"
-	"github.com/readium/r2-streamer-go/fetcher"
-	"github.com/readium/r2-streamer-go/models"
-	"github.com/readium/r2-streamer-go/parser/epub"
+	"github.com/flowpub/r2-streamer-go/fetcher"
+	"github.com/flowpub/r2-streamer-go/models"
+	"github.com/flowpub/r2-streamer-go/parser/epub"
 )
 
 const epub3 = "3.0"

@@ -9,7 +9,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/readium/r2-streamer-go/models"
+	"github.com/flowpub/r2-streamer-go/models"
 )
 
 func init() {

@@ -5,7 +5,7 @@ import (
 	"path"
 	"strings"
 
-	"github.com/readium/r2-streamer-go/parser/epub"
+	"github.com/flowpub/r2-streamer-go/parser/epub"
 )
 
 // Publication Main structure for a publication

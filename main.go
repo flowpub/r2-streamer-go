@@ -18,11 +18,11 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/copier"
 	"github.com/opds-community/libopds2-go/opds2"
-	"github.com/readium/r2-streamer-go/decoder/lcp"
-	"github.com/readium/r2-streamer-go/fetcher"
-	"github.com/readium/r2-streamer-go/models"
-	"github.com/readium/r2-streamer-go/parser"
-	"github.com/readium/r2-streamer-go/searcher"
+	"github.com/flowpub/r2-streamer-go/decoder/lcp"
+	"github.com/flowpub/r2-streamer-go/fetcher"
+	"github.com/flowpub/r2-streamer-go/models"
+	"github.com/flowpub/r2-streamer-go/parser"
+	"github.com/flowpub/r2-streamer-go/searcher"
 	"github.com/urfave/negroni"
 )
 

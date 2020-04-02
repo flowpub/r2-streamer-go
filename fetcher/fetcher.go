@@ -5,7 +5,7 @@ import (
 	"io"
 	"path"
 
-	"github.com/readium/r2-streamer-go/models"
+	"github.com/flowpub/r2-streamer-go/models"
 )
 
 // List TODO add doc
