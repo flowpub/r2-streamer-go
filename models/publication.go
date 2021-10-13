@@ -10,6 +10,7 @@ import (
 
 // Publication Main structure for a publication
 type Publication struct {
+	ToolVersion  string   `json:"toolVersion"`
 	Context      []string `json:"@context,omitempty"`
 	Metadata     Metadata `json:"metadata"`
 	Links        []Link   `json:"links"`
@@ -311,4 +312,8 @@ func (publication *Publication) TransformLinkToFullURL(baseURL string) {
 			publication.Landmarks[i].Href = baseURL + publication.Landmarks[i].Href
 		}
 	}
+}
+
+func (publication *Publication) GetToolVersion() string {
+	return publication.ToolVersion
 }
