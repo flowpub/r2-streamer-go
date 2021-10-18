@@ -10,6 +10,7 @@ import (
 
 // Publication Main structure for a publication
 type Publication struct {
+	ToolVersion  string   `json:"toolVersion"`
 	Context      []string `json:"@context,omitempty"`
 	Metadata     Metadata `json:"metadata"`
 	Links        []Link   `json:"links"`
