@@ -10,19 +10,19 @@ import (
 
 // Publication Main structure for a publication
 type Publication struct {
-	ToolVersion  string   `json:"toolVersion"`
-	Context      []string `json:"@context,omitempty"`
-	Metadata     Metadata `json:"metadata"`
-	Links        []Link   `json:"links"`
-	ReadingOrder []Link   `json:"readingOrder,omitempty"`
-	Resources    []Link   `json:"resources,omitempty"` //Replaces the manifest but less redundant
-	TOC          []Link   `json:"toc,omitempty"`
-	PageList     []Link   `json:"pageList,omitempty"`
-	Landmarks    []Link   `json:"landmarks,omitempty"`
-	LOI          []Link   `json:"loi,omitempty"` //List of illustrations
-	LOA          []Link   `json:"loa,omitempty"` //List of audio files
-	LOV          []Link   `json:"lov,omitempty"` //List of videos
-	LOT          []Link   `json:"lot,omitempty"` //List of tables
+	GeneratorVersion string   `json:"generatorVersion"`
+	Context          []string `json:"@context,omitempty"`
+	Metadata         Metadata `json:"metadata"`
+	Links            []Link   `json:"links"`
+	ReadingOrder     []Link   `json:"readingOrder,omitempty"`
+	Resources        []Link   `json:"resources,omitempty"` //Replaces the manifest but less redundant
+	TOC              []Link   `json:"toc,omitempty"`
+	PageList         []Link   `json:"pageList,omitempty"`
+	Landmarks        []Link   `json:"landmarks,omitempty"`
+	LOI              []Link   `json:"loi,omitempty"` //List of illustrations
+	LOA              []Link   `json:"loa,omitempty"` //List of audio files
+	LOV              []Link   `json:"lov,omitempty"` //List of videos
+	LOT              []Link   `json:"lot,omitempty"` //List of tables
 
 	OtherLinks       []Link                  `json:"-"` //Extension point for links that shouldn't show up in the manifest
 	OtherCollections []PublicationCollection `json:"-"` //Extension point for collections that shouldn't show up in the manifest
@@ -315,5 +315,5 @@ func (publication *Publication) TransformLinkToFullURL(baseURL string) {
 }
 
 func (publication *Publication) GetToolVersion() string {
-	return publication.ToolVersion
+	return publication.GeneratorVersion
 }
