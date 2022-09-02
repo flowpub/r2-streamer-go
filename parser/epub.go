@@ -528,7 +528,7 @@ func fillTOCFromNavDocWithOL(olElem *goquery.Selection, node *[]models.Link, nav
 			fillTOCFromNavDocWithOL(nextOlElem, node, navDocURL)
 		} else {
 			href, _ := s.ChildrenFiltered("a").Attr("href")
-			if href[0] == '#' {
+			if len(href) > 0 && href[0] == '#' {
 				href = navDocURL + href
 			}
 			title := s.ChildrenFiltered("a").Text()
