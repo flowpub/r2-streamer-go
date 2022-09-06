@@ -52,6 +52,7 @@ func (epub *Epub) parseXML(filename string, v interface{}) error {
 	}
 	defer fd.Close()
 	dec := xml.NewDecoder(fd)
+	dec.Entity = xml.HTMLEntity
 	return dec.Decode(v)
 }
 
