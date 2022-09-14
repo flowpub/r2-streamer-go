@@ -53,7 +53,12 @@ func (epub *Epub) parseXML(filename string, v interface{}) error {
 	defer fd.Close()
 	dec := xml.NewDecoder(fd)
 	dec.Entity = xml.HTMLEntity
+	dec.CharsetReader = identityCharsetReader
 	return dec.Decode(v)
+}
+
+func identityCharsetReader(label string, input io.Reader) (io.Reader, error) {
+	return input, nil
 }
 
 func (epub *Epub) parseJSON(filename string, v interface{}) error {
