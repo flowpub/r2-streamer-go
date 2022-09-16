@@ -57,6 +57,8 @@ func (epub *Epub) parseXML(filename string, v interface{}) error {
 	return dec.Decode(v)
 }
 
+// TODO: find a better charset reader that will handle all encodings
+// see this for details: https://stackoverflow.com/a/50812725
 func identityCharsetReader(label string, input io.Reader) (io.Reader, error) {
 	return input, nil
 }
