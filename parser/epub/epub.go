@@ -25,22 +25,22 @@ type Epub struct {
 	directory string
 }
 
-//Open open resource file
+// Open open resource file
 func (epub *Epub) Open(filepath string) (io.ReadCloser, error) {
 	return epub.open(epub.filename(filepath))
 }
 
-//RawOpen open resource file without filepath transform
+// RawOpen open resource file without filepath transform
 func (epub *Epub) RawOpen(filepath string) (io.ReadCloser, error) {
 	return epub.open(filepath)
 }
 
-//Close close file reader
+// Close close file reader
 func (epub *Epub) Close() {
 	epub.zipFd.Close()
 }
 
-//-----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 func (epub *Epub) filename(name string) string {
 	return path.Join(path.Dir(epub.Container.Rootfile.Path), name)
 }
@@ -113,7 +113,7 @@ func (epub *Epub) GetSMIL(ressource string) SMIL {
 	return smil
 }
 
-//OpenEpub open and parse epub
+// OpenEpub open and parse epub
 func OpenEpub(fn string) (*Epub, error) {
 	zipFile, err := zip.OpenReader(fn)
 	if err != nil {
@@ -140,7 +140,7 @@ func OpenEpub(fn string) (*Epub, error) {
 			epb.NcxPath = epb.filename(manf.Href)
 			errToc := epb.parseXML(epb.filename(manf.Href), &epb.Ncx)
 			if errToc != nil {
-				// return nil, errToc
+				return nil, errToc
 			}
 			break
 		}
@@ -149,7 +149,7 @@ func OpenEpub(fn string) (*Epub, error) {
 	return &epb, nil
 }
 
-//OpenDir open a opf file
+// OpenDir open a opf file
 func OpenDir(filename string) (*Epub, error) {
 
 	epb := Epub{directory: filename}
