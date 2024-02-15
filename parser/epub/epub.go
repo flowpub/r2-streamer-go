@@ -50,11 +50,17 @@ func (epub *Epub) parseXML(filename string, v interface{}) error {
 	if err != nil {
 		return nil
 	}
+
 	defer fd.Close()
 	dec := xml.NewDecoder(fd)
 	dec.Entity = xml.HTMLEntity
 	dec.CharsetReader = identityCharsetReader
-	return dec.Decode(v)
+	err = dec.Decode(v)
+	if err != nil {
+		err = fmt.Errorf("error parsing %s: %s", filename, err)
+	}
+
+	return err
 }
 
 // TODO: find a better charset reader that will handle all encodings
